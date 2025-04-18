@@ -80,7 +80,7 @@ export default function Dashboard() {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post("http://localhost:1405/get/sales", {
+      const response = await axios.post("http://192.168.1.111:1405/get/sales", {
         startFrom: 0, // Always start from 0 for specific customer view
         pageSize: 50, // You can adjust this if needed
         sortColumn: sortColumn,
@@ -109,7 +109,7 @@ export default function Dashboard() {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post("http://localhost:1405/get/sales", {
+      const response = await axios.post("http://192.168.1.111:1405/get/sales", {
         startFrom: offset,
         pageSize: pageSize,
         sortColumn: column,
@@ -201,7 +201,7 @@ export default function Dashboard() {
     if (name === "MobileNumber" && value.length === 10) {
       try {
         const response = await axios.post(
-          "http://localhost:1405/get/transactioncustomer",
+          "http://192.168.1.111:1405/get/transactioncustomer",
           {
             mobileNumber: value,
           }
@@ -225,7 +225,7 @@ export default function Dashboard() {
     e.preventDefault();
     try {
       const customer_response = await axios.post(
-        "http://localhost:1405/add/customer",
+        "http://192.168.1.111:1405/add/customer",
         {
           mobile: newCustomer.MobileNumber,
           name: newCustomer.CustomerName,
@@ -233,7 +233,7 @@ export default function Dashboard() {
       );
       if (customer_response.data.status === 1) {
         const transaction_response = await axios.post(
-          "http://localhost:1405/add/transaction",
+          "http://192.168.1.111:1405/add/transaction",
           {
             customer_id: customer_response.data.data.id,
             date: newCustomer.Date,
@@ -291,7 +291,7 @@ export default function Dashboard() {
     if (selectedCustomer) {
       try {
         const response = await axios.delete(
-          `http://localhost:1405/delete/transaction/${selectedCustomer._id}`
+          `http://192.168.1.111:1405/delete/transaction/${selectedCustomer._id}`
         );
         if (response.data.status === 1) {
           const updatedCustomers = customers.filter(
@@ -334,7 +334,7 @@ export default function Dashboard() {
     }
     try {
       const response = await axios.put(
-        `http://localhost:1405/edit/transaction/${selectedCustomer._id}`,
+        `http://192.168.1.111:1405/edit/transaction/${selectedCustomer._id}`,
         {
           customer_id: selectedCustomer.customer_id,
           mobile_number: newCustomer.MobileNumber,

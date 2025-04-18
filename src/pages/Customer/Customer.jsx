@@ -37,9 +37,9 @@ const [sortColumn, setSortColumn] = useState("createdAt");
 
 const [viewSelectedCustomer, setviewSelectedCustomer] = useState();
 
-useEffect(()=>{
-  console.log('aaa',viewSelectedCustomer);
-},[viewSelectedCustomer])
+// useEffect(()=>{
+//   console.log('aaa',selectedCustomer);
+// },[selectedCustomer])
   // Pagination states
   const [startFrom, setStartFrom] = useState(0);
   const pageSize = 15; // Change page size if needed
@@ -58,11 +58,12 @@ useEffect(()=>{
   const fetchViewSelectedCustomerData = async (customerId) => {
     setLoading(true); // Show loading indicator
     try {
-      const response = await axios.post("http://localhost:1405/get/customer", {
-        customer_id: customerId, // Pass the customer ID to the API
+      const response = await axios.post("http://192.168.1.111:1405/get/individualcustomer", {
+        _id: customerId, // Pass the customer ID to the API
       });
   
       if (response.data.status === 1) {
+        console.log('check',response.data.data);
         const customerData = response.data.data;
         setviewSelectedCustomer(customerData); // Use the correct state setter
         setIsViewDialogOpen(true); // Open the customer details dialog
@@ -90,7 +91,7 @@ useEffect(()=>{
       sortOrder: order,    // Send sort order (1 for ascending, -1 for descending)
     });
     try {
-      const response = await axios.post("http://localhost:1405/get/customer", {
+      const response = await axios.post("http://192.168.1.111:1405/get/customer", {
         startFrom: offset,
         pageSize: pageSize,
         sortColumn: column,  // Send sort column
@@ -189,7 +190,7 @@ useEffect(()=>{
   const handleAddCustomer = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:1405/add/customer", {
+      const response = await axios.post("http://192.168.1.111:1405/add/customer", {
         mobile: newCustomer.MobileNumber,
         name: newCustomer.CustomerName,
         address: newCustomer.Address,
@@ -260,7 +261,7 @@ useEffect(()=>{
   
     try {
       const response = await axios.delete(
-        `http://localhost:1405/delete/customer/${selectedCustomer._id}`
+        `http://192.168.1.111:1405/delete/customer/${selectedCustomer._id}`
       );
   
       console.log("API Response:", response.data);
@@ -301,7 +302,7 @@ useEffect(()=>{
   
     try {
       const response = await axios.put(
-        `http://localhost:1405/edit/customer/${selectedCustomer._id}`,
+        `http://192.168.1.111:1405/edit/customer/${selectedCustomer._id}`,
         {
           name: newCustomer.CustomerName,
           mobile: newCustomer.MobileNumber,
@@ -360,7 +361,7 @@ const handleSearchChange = (e) => {
  const handleViewCustomer = (customer, index) => {
   setSelectedCustomer(customer);
   setSelectedIndex(index); // Set the index here so you can display it
-  fetchViewSelectedCustomerData(customer.customer_id);
+  fetchViewSelectedCustomerData(customer._id);
   setIsViewDialogOpen(true);
 };
 
@@ -559,18 +560,19 @@ const handleSearchChange = (e) => {
       )}
 
 
-       {/* NEW: View Details Dialog - shows details of a specific record */}
-       {isViewDialogOpen &&
+{/* NEW: View Details Dialog - shows details of a specific record */}
+{isViewDialogOpen &&
   viewSelectedCustomer &&
-  viewSelectedCustomer.length > 0 && (
+  viewSelectedCustomer.transactions &&
+  viewSelectedCustomer.transactions.length > 0 && (
     <div className="dialog-overlay-view-customer">
       <div className="dialog-view-customer">
         <h2>Customer Details</h2>
 
         {/* Customer Information */}
         <div className="customer-info-tag">
-          <strong>Customer Name:</strong> {viewSelectedCustomer[0].customer_name} |{" "}
-          <strong>Mobile Number:</strong> {viewSelectedCustomer[0].customer_mobile}
+          <strong>Customer Name:</strong> {selectedCustomer.name || "N/A"} |{" "}
+          <strong>Mobile Number:</strong> {selectedCustomer.mobile || "N/A"}
         </div>
 
         {/* Scrollable Table */}
@@ -586,23 +588,23 @@ const handleSearchChange = (e) => {
               </tr>
             </thead>
             <tbody>
-              {viewSelectedCustomer.map((customer, index) => (
-                <tr key={index}>
+              {viewSelectedCustomer.transactions.map((transaction, index) => (
+                <tr key={transaction._id}>
                   <td>{index + 1}</td>
-                  <td>{customer.dateTime}</td>
-                  <td>{customer.transaction}</td>
-                  <td>{customer.payment}</td>
-                  <td>{customer.remarks}</td>
+                  <td>{new Date(transaction.date).toLocaleString()}</td>
+                  <td>{transaction.tag === "sales" ? transaction.amount : "-"}</td>
+                  <td>{transaction.tag === "payment" ? transaction.amount : "-"}</td>
+                  <td>{transaction.remarks}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        {/* Total Due Payment */}
+        {/* Total Outstanding */}
         <div className="total-due-payment">
-          <strong>Total Due Payment: </strong>
-          {viewSelectedCustomer.reduce((total, customer) => total + (customer.due || 0), 0)}
+          <strong>Total Outstanding: </strong>
+          {viewSelectedCustomer.outstanding || 0}
         </div>
 
         {/* Close Button */}

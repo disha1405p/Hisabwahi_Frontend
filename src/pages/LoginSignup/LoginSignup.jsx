@@ -20,7 +20,7 @@ const LoginSignup = ({ onLogin }) => {
   const handleSubmit = async () => {
     try {
       // Call backend API using axios
-      const response = await axios.post('http://localhost:1405/login/loginApi', {
+      const response = await axios.post('http://192.168.1.111:1405/login/loginApi', {
         emailId: email,
         password: password,
       });

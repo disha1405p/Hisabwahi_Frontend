@@ -80,7 +80,7 @@ const [viewSelectedPayment, setviewSelectedPayment] = useState();
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post("http://localhost:1405/get/payment", {
+      const response = await axios.post("http://192.168.1.111:1405/get/payment", {
         startFrom: 0, // Always start from 0 for specific customer view
         pageSize: 50, // You can adjust this if needed
         sortColumn: sortColumn,
@@ -117,7 +117,7 @@ const [viewSelectedPayment, setviewSelectedPayment] = useState();
       // customer_id: customerId,
   });
     try {
-      const response = await axios.post("http://localhost:1405/get/payment", {
+      const response = await axios.post("http://192.168.1.111:1405/get/payment", {
         startFrom: offset,
         pageSize: pageSize,
         sortColumn: column,  // Send sort column
@@ -213,7 +213,7 @@ const [viewSelectedPayment, setviewSelectedPayment] = useState();
     setNewCustomer((prev) => ({ ...prev, [name]: value }));
     if (name === "MobileNumber" && value.length === 10) {
       try {
-        const response = await axios.post("http://localhost:1405/get/paymentcustomer", {
+        const response = await axios.post("http://192.168.1.111:1405/get/paymentcustomer", {
           mobileNumber: value,
         });
         if (response.data.status === 1) {
@@ -234,12 +234,12 @@ const [viewSelectedPayment, setviewSelectedPayment] = useState();
   const handleAddPayment = async (e) => {
     e.preventDefault();
     try {
-      const customer_response = await axios.post("http://localhost:1405/add/customer", {
+      const customer_response = await axios.post("http://192.168.1.111:1405/add/customer", {
         mobile: newCustomer.MobileNumber,
         name: newCustomer.CustomerName,
       });
       if (customer_response.data.status === 1) {
-        const payment_response = await axios.post("http://localhost:1405/add/payment", {
+        const payment_response = await axios.post("http://192.168.1.111:1405/add/payment", {
           customer_id: customer_response.data.data.id,
           date: newCustomer.Date,
           amount: newCustomer.Amount,
@@ -300,7 +300,7 @@ const [viewSelectedPayment, setviewSelectedPayment] = useState();
     if (!selectedPaymentId) return;
   
     try {
-      const response = await axios.delete(`http://localhost:1405/delete/payment/${selectedPaymentId}`);
+      const response = await axios.delete(`http://192.168.1.111:1405/delete/payment/${selectedPaymentId}`);
   
       if (response.data.status === 1) {
         // Remove the deleted payment from state
@@ -335,7 +335,7 @@ const [viewSelectedPayment, setviewSelectedPayment] = useState();
       };
   
       const response = await axios.put(
-        `http://localhost:1405/edit/payment/${selectedCustomer._id}`, // Use the selected payment's ID
+        `http://192.168.1.111:1405/edit/payment/${selectedCustomer._id}`, // Use the selected payment's ID
         updatedPayment
       );
   
@@ -373,7 +373,7 @@ const [viewSelectedPayment, setviewSelectedPayment] = useState();
     if (!confirmDelete) return;
   
     try {
-      const response = await axios.delete(`http://localhost:1405/delete/payment/${paymentId}`);
+      const response = await axios.delete(`http://192.168.1.111:1405/delete/payment/${paymentId}`);
   
       if (response.data.status === 1) {
         // Remove the deleted payment from state
