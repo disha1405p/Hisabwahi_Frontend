@@ -1,0 +1,168 @@
+/* Container for the entire layout */
+.layout-container {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Main content area with left margin to accommodate sidebar */
+  .layout-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Fixed Header at the Top */
+  .layout-header {
+    display: flex;
+    align-items: center;
+    background-color: #ffdf02; /* Yellow background */
+    color: #5a155d;           /* Violet text */
+    padding: 15.5px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* Desktop (Laptop) Layout */
+  @media screen and (min-width: 656px) {
+    .layout-header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .header-left-l,
+    .header-center-l,
+    .header-right-l {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .header-left-l {
+      justify-content: flex-start;
+    }
+    .header-center-l {
+      justify-content: center;
+      text-align: center;
+    }
+    .header-right-l {
+      justify-content: flex-end;
+      position: relative;
+    }
+    .right-content {
+        justify-content: flex-end;
+        position: relative;
+        background-color: white;
+        padding: 10px 22px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px 1px rgba(80, 6, 114, 0.9);
+      }
+    .header-icon-l {
+      font-size: 28px;
+      margin-right: 10px;
+    }
+    .shop-name-l {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .active-page-l {
+      font-size: 26px;
+      color: #5a155d;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+    .credits-l {
+      font-size: 28px;
+      color: #5a155d;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header-right-l p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  /* Mobile Layout */
+  @media screen and (max-width: 655.9px) {
+    .layout-header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 12px 10px;
+    }
+    /* Stack header-left and header-center into one group */
+    .header-group {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .header-left-l {
+        display: flex;
+        flex-direction: row;
+    }
+    .header-icon-l {
+        font-size: 28px;
+        margin-right: 10px;
+    }
+    .shop-name-l {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .header-center-l {
+      width: 60%;
+      justify-content: flex-start;
+      margin-top: 4px;
+    }
+    .header-center-l {
+        justify-content: center;
+        text-align: center;
+    }
+    .active-page-l {
+        font-size: 20px;
+        font-weight: bold;
+        color: #5a155d;
+        margin-top: 4px;
+    }
+
+    /* Header-right becomes its own row */
+    .header-right-l {
+      position: absolute;
+      right: 3%;
+      top: 20%;
+    }
+    .right-content{
+        width: fit-content;
+        position: relative;
+        background-color: white;
+        padding: 10px 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px 1px rgba(80, 6, 114, 0.9);
+        text-align: center;
+    }
+    .credits-l {
+        font-size: 20px;
+        color: #5a155d;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+      .header-right-l p {
+        margin: 0;
+        padding: 0;
+    }
+  }
+  
+  /* Content area styling */
+  .layout-content {
+    flex: 1;
+    padding: 20px 20px 0 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #fff;
+  }

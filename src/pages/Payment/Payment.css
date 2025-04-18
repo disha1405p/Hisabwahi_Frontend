@@ -1,0 +1,500 @@
+/* Main container styling */
+.main-container-payment {
+    background-color: #f9f9f9;
+    margin-top: 5%;
+    }
+    
+    .button-container-payment {
+      display: flex; /* Align buttons horizontally */
+      gap: 10px; /* Adds a 10px gap between buttons */
+      align-items: center; /* Vertically align buttons */
+      justify-content: flex-end;
+      margin-right: 10px;
+    }
+    
+    .search-input-payment {
+        margin-left: 10px;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+    .search-btn,
+    .add-payment-btn {
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .search-btn {
+      background-color:  #5e3df1;
+      color: white;
+    }
+    
+    .search-btn:hover {
+      background-color:  #5e3df1;
+    }
+    
+    .add-payment-btn {
+        background-color: #5e3df1;
+        color: white; /* White text */
+        font-size: 16px; /* Font size */
+        padding: 10px 20px; /* Padding for size */
+        border: none; /* No border */
+        border-radius: 8px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+      }
+      
+      .add-payment-btn:hover {
+        background-color:  #5e3df1; 
+        transform: scale(1.05); /* Slight zoom effect */
+      }
+      
+      .add-payment-btn:active {
+        background-color:  #5e3df1; 
+        transform: scale(0.95); /* Slight shrink effect */
+      }
+
+      .dialog-overlay-payment {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      .dialog-payment {
+        background: white;
+        padding-left: 20px;
+        padding-right: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 8px;
+        width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .dialog-payment h2 {
+        margin-top: 0;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+    
+      .form-group-payment {
+        margin-bottom: 15px;
+      }
+    
+    
+      .form-group-payment label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;  
+      }
+      
+      .form-group-payment input {
+        border: 1px solid black;
+        border-radius: 4px; /* Optional: Add some border radius */
+        padding: 8px;      /* Optional: Add padding for better appearance */
+        width: 100%;
+        outline: none;
+      }
+      
+      .form-group-payment input:focus {
+        box-shadow: 0 0 5px blue; /* Add a glow effect on focus */
+        border: 2px solid blue;
+      }
+
+      .dialog-actions-payment {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        width: 100%;
+        /* padding-right: 0; */
+      }
+      
+      .dialog-actions-payment button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .dialog-actions-payment button:first-child {
+        background-color: #ccc;
+        color: black;
+      }
+      
+      .dialog-actions-payment button:first-child:hover {
+        background-color: #b3b3b3;
+      }
+      
+      .dialog-actions-payment button:last-child {
+        background-color: #007bff;
+        color: white;
+      }
+      
+      .dialog-actions-payment button:last-child:hover {
+        background-color: #0056b3;
+      }
+
+     /* Dialog Overlay */
+.dialog-overlay-edit-payment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Dialog Container */
+.dialog-edit-payment {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Dialog Title */
+.dialog-edit-payment h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Dialog Description */
+.dialog-edit-payment p {
+  font-size: 1rem;
+  color:  black;
+  margin-bottom: 20px;
+}
+
+/* Dialog Actions */
+.dialog-actions-edit-payment {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+.dialog-actions-edit-payment button {
+  background-color:#5e3df1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-actions-edit-payment button:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel Button */
+.dialog-actions-edit-payment button:nth-child(2) {
+  background-color: #ccc;
+}
+
+.dialog-actions-edit-payment button:nth-child(2):hover {
+  background-color:  #b3b3b3;
+}
+
+     /* Dialog Overlay */
+     .dialog-overlay-delete-payment {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    /* Dialog Container */
+    .dialog-delete-payment {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    
+    /* Dialog Title */
+    .dialog-delete-payment h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    /* Dialog Description */
+    .dialog-delete-payment p {
+      font-size: 1rem;
+      color:  black;
+      margin-bottom: 20px;
+    }
+    
+    /* Dialog Actions */
+    .dialog-actions-delete-payment {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    
+    /* Buttons */
+    .dialog-actions-delete-payment button {
+      background-color:#5e3df1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dialog-actions-delete-payment button:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Cancel Button */
+    .dialog-actions-delete-payment button:nth-child(2) {
+      background-color: #ccc;
+    }
+    
+    .dialog-actions-delete-payment button:nth-child(2):hover {
+      background-color:  #b3b3b3;
+    }
+    
+      
+      /* Keyframes for fade-in effect */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      
+      .dialog-actions-payment button:hover {
+        opacity: 0.8;
+      }
+
+
+ /* Dialog Overlay */
+ .dialog-overlay-view-payment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+ /* Dialog Container */
+ .dialog-view-payment {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+
+   /* Dialog Title */
+   .dialog-view-payment h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+
+  .table-container-view-payment {
+    max-height: 350px; /* Set the desired fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border to the table container */
+    border-radius: 6px;
+  }
+
+
+    
+  /* Table styling */
+  .view-details-table-payment {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+
+  .view-details-table-payment .tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+
+  .view-details-table-payment .tbody th {
+    position: relative;
+    padding-right: 20px; /* Space for the icon */
+    text-align: left;
+  }
+
+ /* Buttons */
+ .dialog-actions-view-payment button {
+  background-color:#5e3df1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+      
+    /* Container for the table with scrollable content */
+    .table-container-payment {
+      max-height: 80vh; /* Set the maximum height for the table container */
+      overflow-y: auto; /* Enable vertical scrolling */
+      margin: 10px;
+      border: 1px solid #ccc; /* Optional: Add border for visual clarity */
+    }
+    
+      /* Table styling */
+    .table-payment {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        
+      }
+    
+      thead th {
+        position: sticky; /* Makes the header row fixed */
+        top: 0; /* Stick to the top of the container */
+        background-color: #f4f4f4; /* Background color for the header */
+        z-index: 2; /* Ensures header is above the body content */
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+    
+      tbody td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+    
+      tbody tr:nth-child(even) {
+        background-color: #f9f9f9; /* Optional: Add zebra striping */
+      }
+    
+      /* Table header styling */
+    table th,
+    table td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+    }
+    
+    th.sr-no-payment,
+    td.sr-no-payment {
+      width: 40px; /* Adjust as needed for the Sr. No. column */
+    }
+    
+    th.date-payment,
+    td.date-payment {
+      width: 100px; /* Adjust as needed for the date-payment column */
+    }
+  
+    th.customer-name-payment,
+    td.customer-name-payment {
+      width: 100px; /* Adjust as needed for the Customer Name column */
+    }
+    
+    th.mobile-no-payment,
+    td.mobile-no-payment {
+      width: 100px; /* Adjust as needed for the Mobile Number column */
+    }
+    
+    th.amount-payment,
+    td.amount-payment {
+      width: 70px; /* Adjust as needed for the amount-payment column */
+    }
+    
+    th.remarks-payment,
+    td.remarks-payment {
+      width: 160px; /* Adjust as needed for the remarks-payment column */
+    }
+    
+    th.action-payment,
+    td.action-payment {
+      width: 100px; /* Adjust as needed for the action-payment column */
+    }
+    
+
+    th {
+      position: relative;
+      padding-right: 20px; /* Space for the icon */
+      text-align: left;
+    }
+  
+    th i {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 14px;
+      color: white; /* Ensure visible */
+    }
+
+
+
+    table th {
+        background-color: #5e3df1;  /* Consistent with your sidebar/header accent */
+        color: white;
+        text-align: left;
+      }
+    
+      /* Hover effect on rows */
+    table tr:hover {
+        background-color: #eaeaea;
+      }
+    
+    
+    
+      
+    

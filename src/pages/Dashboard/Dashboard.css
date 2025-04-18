@@ -1,0 +1,504 @@
+/* Main container styling */
+.main-container-dashboard {
+  background-color: #f9f9f9;
+  margin-top: 5%;
+  }
+
+
+  /* Button container for the Add Customer button */
+  .search-input-dashboard {
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .button-container-dashboard {
+    display: flex; /* Align buttons horizontally */
+    gap: 10px; /* Adds a 10px gap between buttons */
+    align-items: center; /* Vertically align buttons */
+    justify-content: flex-end;
+    margin-right: 10px;
+  }
+  
+  .search-btn-dashboard,
+  .add-transaction-dashboard-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-btn-dashboard {
+    background-color:  #5e3df1;
+    color: white;
+  }
+  
+  .search-btn-dashboard:hover {
+    background-color:  #5e3df1;
+  }
+  
+  .add-transaction-dashboard-btn {
+    background-color: #5e3df1;
+        color: white; /* White text */
+        font-size: 16px; /* Font size */
+        padding: 10px 20px; /* Padding for size */
+        border: none; /* No border */
+        border-radius: 8px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: background-color 0.3s ease, transform 0.2s ease /* Smooth transitions */
+  }
+  
+  .add-transaction-dashboard-btn:hover {
+    background-color:  #5e3df1;
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .add-transaction-dashboard-btn:active {
+    background-color:  #5e3df1; 
+    transform: scale(0.95); /* Slight shrink effect */
+  }
+  
+ 
+  .dialog-overlay-dashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .dialog-dashboard {
+    background: white;
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dialog-dashboard h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .form-group-dashboard {
+    margin-bottom: 15px;
+  }
+
+
+  .form-group-dashboard label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group-dashboard input {
+    border: 1px solid black;
+    border-radius: 4px; /* Optional: Add some border radius */
+    padding: 8px;      /* Optional: Add padding for better appearance */
+    width: 100%;
+    outline: none;
+  }
+  
+  .form-group-dashboard input:focus {
+    box-shadow: 0 0 5px blue; /* Add a glow effect on focus */
+    border: 2px solid blue;
+  }
+
+  .dialog-actions-dashboard {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+    /* padding-right: 0; */
+  }
+  
+  .dialog-actions-dashboard button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .dialog-actions-dashboard button:first-child {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  .dialog-actions-dashboard button:first-child:hover {
+    background-color: #b3b3b3;
+  }
+  
+  .dialog-actions-dashboard button:last-child {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .dialog-actions-dashboard button:last-child:hover {
+    background-color: #0056b3;
+  }
+  
+
+   /* Dialog Overlay */
+.dialog-overlay-edit-dashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Dialog Container */
+.dialog-edit-dashboard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Dialog Title */
+.dialog-edit-dashboard h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Dialog Description */
+.dialog-edit-dashboard p {
+  font-size: 1rem;
+  color:  black;
+  margin-bottom: 20px;
+}
+
+/* Dialog action-dashboards */
+.dialog-actions-edit-dashboard {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+.dialog-actions-edit-dashboard button {
+  background-color:#5e3df1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-actions-edit-dashboard button:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel Button */
+.dialog-actions-edit-dashboard button:nth-child(2) {
+  background-color: #ccc;
+}
+
+.dialog-actions-edit-dashboard button:nth-child(2):hover {
+  background-color:  #b3b3b3;
+}
+
+     /* Dialog Overlay */
+     .dialog-overlay-delete-dashboard {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    /* Dialog Container */
+    .dialog-delete-dashboard {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    
+    /* Dialog Title */
+    .dialog-delete-dashboard h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    /* Dialog Description */
+    .dialog-delete-dashboard p {
+      font-size: 1rem;
+      color:  black;
+      margin-bottom: 20px;
+    }
+    
+    /* Dialog action-dashboards */
+    .dialog-actions-delete-dashboard {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    
+    /* Buttons */
+    .dialog-actions-delete-dashboard button {
+      background-color:#5e3df1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dialog-actions-delete-dashboard button:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Cancel Button */
+    .dialog-actions-delete-dashboard button:nth-child(2) {
+      background-color: #ccc;
+    }
+    
+    .dialog-actions-delete-dashboard button:nth-child(2):hover {
+      background-color:  #b3b3b3;
+    }
+    
+  /* Keyframes for fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .dialog-actions-dashboard button:hover {
+    opacity: 0.8;
+  }
+  
+
+
+
+ /* Dialog Overlay */
+ .dialog-overlay-view-dashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+ /* Dialog Container */
+ .dialog-view-dashboard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+
+   /* Dialog Title */
+   .dialog-view-dashboard h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .table-container-view-dashboard {
+    max-height: 350px; /* Set the desired fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border to the table container */
+    border-radius: 6px;
+  }
+
+  
+  /* Table styling */
+  .view-details-table-dashboard {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+
+  .view-details-table-dashboard .tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+
+  .view-details-table-dashboard .tbody th {
+    position: relative;
+    border: 1px solid #ddd;
+    padding-right: 20px; /* Space for the icon */
+    text-align: left;
+  }
+
+ /* Buttons */
+ .dialog-actions-view-dashboard button {
+  background-color:#5e3df1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Container for the table with scrollable content */
+.table-container-dashboard {
+  max-height: 80vh; /* Set the maximum height for the table container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin: 10px;
+  border: 1px solid #ccc; /* Optional: Add border for visual clarity */
+}
+
+  /* Table styling */
+.table-dashboard {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    
+  }
+
+  thead th {
+    position: sticky; /* Makes the header row fixed */
+    top: 0; /* Stick to the top of the container */
+    background-color: #f4f4f4; /* Background color for the header */
+    z-index: 2; /* Ensures header is above the body content */
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+/* Center-align content for all table headers and cells */
+table th,
+table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center; /* Center-align horizontally */
+  vertical-align: middle; /* Center-align vertically */
+}
+
+  th.sr-no-dashboard,
+  td.sr-no-dashboard {
+    width: 40px; /* Adjust as needed for the Sr. No. column */
+  }
+  
+  th.date-dashboard,
+  td.date-dashboard {
+    width: 100px; /* Adjust as needed for the date-dashboard column */
+  }
+
+  th.customer-name-dashboard,
+  td.customer-name-dashboard {
+    width: 100px; /* Adjust as needed for the Customer Name column */
+  }
+  
+  th.mobile-no-dashboard,
+  td.mobile-no-dashboard {
+    width: 100px; /* Adjust as needed for the Mobile Number column */
+  }
+  
+  th.amount-dashboard,
+  td.amount-dashboard {
+    width: 70px; /* Adjust as needed for the amount-dashboard column */
+  }
+  
+  th.remarks-dashboard,
+  td.remarks-dashboard {
+    width: 160px; /* Adjust as needed for the remarks-dashboard column */
+  }
+  
+  th.action-dashboard,
+  td.action-dashboard {
+    width: 100px; /* Adjust as needed for the action-dashboard column */
+  }
+
+  th {
+    position: relative;
+    padding-right: 20px; /* Space for the icon */
+    text-align: left;
+  }
+
+  th i {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 14px;
+    color: white; /* Ensure visible */
+  }
+  
+  
+  
+  
+  tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Optional: Add zebra striping */
+  }
+
+
+
+table th {
+    background-color: #5e3df1;  /* Consistent with your sidebar/header accent */
+    color: white;
+    text-align: left;
+  }
+
+  /* Hover effect on rows */
+table tr:hover {
+    background-color: #eaeaea;
+  }
+
+
+
+  
+

@@ -1,0 +1,469 @@
+.main-container-customer {
+    background-color: #f9f9f9;
+    margin-top: 5%;
+    height: 100%;
+    }
+
+    .search-input-customer {
+      margin-left: 10px;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .button-container-customer {
+      display: flex; /* Align buttons horizontally */
+      gap: 10px; /* Adds a 10px gap between buttons */
+      align-items: center; /* Vertically align buttons */
+      justify-content: flex-end;
+      margin-right: 10px;
+    }
+    
+    .search-btn-customer,
+    .add-customer-button {
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .search-btn-customer {
+      background-color:  #5e3df1;
+      color: white;
+    }
+    
+    .search-btn-customer:hover {
+      background-color:  #5e3df1;
+    }
+    
+    .add-customer-button {
+      background-color: #5e3df1;
+        color: white; /* White text */
+        font-size: 16px; /* Font size */
+        padding: 10px 20px; /* Padding for size */
+        border: none; /* No border */
+        border-radius: 8px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: background-color 0.3s ease, transform 0.2s ease /* Smooth transitions */
+    }
+
+    .add-customer-button:hover {
+      background-color:  #5e3df1;
+      transform: scale(1.05); /* Slight zoom effect */
+    }
+    
+    .add-customer-button:active {
+      background-color:  #5e3df1; 
+      transform: scale(0.95); /* Slight shrink effect */
+    }
+
+    .dialog-overlay-customer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .dialog-customer {
+      background: white;
+      padding-left: 20px;
+      padding-right: 40px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dialog-customer h2 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  
+    .form-group-customer {
+      margin-bottom: 15px;
+    }
+  
+  
+    .form-group-customer label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .form-group-customer input {
+      border: 1px solid black;
+      border-radius: 4px; /* Optional: Add some border radius */
+      padding: 8px;      /* Optional: Add padding for better appearance */
+      width: 100%;
+      outline: none;
+    }
+    
+    .form-group-customer input:focus {
+      box-shadow: 0 0 5px blue; /* Add a glow effect on focus */
+      border: 2px solid blue;
+    }
+  
+    .dialog-actions-customer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      width: 100%;
+      /* padding-right: 0; */
+    }
+    
+    .dialog-actions-customer button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .dialog-actions-customer button:first-child {
+      background-color: #ccc;
+      color: black;
+    }
+    
+    .dialog-actions-customer button:first-child:hover {
+      background-color: #b3b3b3;
+    }
+    
+    .dialog-actions-customer button:last-child {
+      background-color: #007bff;
+      color: white;
+    }
+    
+    .dialog-actions-customer button:last-child:hover {
+      background-color: #0056b3;
+    }
+    
+
+
+
+/* Container for the table with scrollable content */
+.table-container-customer {
+    max-height: 80vh; /* Set the maximum height for the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 10px;
+    border: 1px solid #ccc; /* Optional: Add border for visual clarity */
+  }
+  
+    /* Table styling */
+    .table-customer {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+  
+    thead th {
+      position: sticky; /* Makes the header row fixed */
+      top: 0; /* Stick to the top of the container */
+      background-color: #f4f4f4; /* Background color for the header */
+      z-index: 2; /* Ensures header is above the body content */
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+  
+    tbody td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+  
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9; /* Optional: Add zebra striping */
+    }
+  
+    /* Table header styling */
+  table th,
+  table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  th.sr-no-customer,
+  td.sr-no-customer {
+    width: 40px; /* Adjust as needed for the Sr. No. column */
+  }
+
+  th.customer-name-customer,
+  td.customer-name-customer {
+    width: 100px; /* Adjust as needed for the Customer Name column */
+  }
+  
+  th.mobile-no-customer,
+  td.mobile-no-customer {
+    width: 150px; /* Adjust as needed for the Mobile Number column */
+  }
+  
+  th.total-amount-customer,
+  td.total-amount-customer {
+    width: 70px; /* Adjust as needed for the amount-dashboard column */
+  }
+
+
+  th.address-customer,
+  td.address-customer {
+    width: 160px; /* Adjust as needed for the amount-dashboard column */
+  }
+
+  th.action-customer,
+  td.action-customer {
+    width: 100px; /* Adjust as needed for the amount-dashboard column */
+  }
+  
+
+  th {
+    position: relative;
+    padding-right: 20px; /* Space for the icon */
+    text-align: left;
+  }
+
+  th i {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 14px;
+    color: white; /* Ensure visible */
+  }
+  
+
+  table th {
+      background-color: #5e3df1;  /* Consistent with your sidebar/header accent */
+      color: white;
+      text-align: left;
+    }
+  
+    /* Hover effect on rows */
+  table tr:hover {
+      background-color: #eaeaea;
+    }
+  
+     /* Dialog Overlay */
+.dialog-overlay-edit-customer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Dialog Container */
+.dialog-edit-customer {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Dialog Title */
+.dialog-edit-customer h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Dialog Description */
+.dialog-edit-customer p {
+  font-size: 1rem;
+  color:  black;
+  margin-bottom: 20px;
+}
+
+/* Dialog Actions */
+.dialog-actions-edit-customer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+.dialog-actions-edit-customer button {
+  background-color:#5e3df1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-actions-edit-customer button:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel Button */
+.dialog-actions-edit-customer button:nth-child(2) {
+  background-color: #ccc;
+}
+
+.dialog-actions-edit-customer button:nth-child(2):hover {
+  background-color:  #b3b3b3;
+}
+
+     /* Dialog Overlay */
+     .dialog-overlay-delete-customer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    /* Dialog Container */
+    .dialog-delete-customer {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    
+    /* Dialog Title */
+    .dialog-delete-customer h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    /* Dialog Description */
+    .dialog-delete-customer p {
+      font-size: 1rem;
+      color:  black;
+      margin-bottom: 20px;
+    }
+    
+    /* Dialog Actions */
+    .dialog-actions-delete-customer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    
+    /* Buttons */
+    .dialog-actions-delete-customer button {
+      background-color:#5e3df1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dialog-actions-delete-customer button:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Cancel Button */
+    .dialog-actions-delete-customer button:nth-child(2) {
+      background-color: #ccc;
+    }
+    
+    .dialog-actions-delete-customer button:nth-child(2):hover {
+      background-color:  #b3b3b3;
+    }
+  
+    /* Dialog Overlay */
+ .dialog-overlay-view-customer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+ /* Dialog Container */
+ .dialog-view-customer {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+
+   /* Dialog Title */
+   .dialog-view-customer h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .table-container-view-customer {
+    max-height: 350px; /* Set the desired fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border to the table container */
+    border-radius: 6px;
+  }
+
+  
+  /* Table styling */
+  .view-details-table-customer {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+
+  .view-details-table-customer .tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+
+  .view-details-table-customer .tbody th {
+    position: relative;
+    border: 1px solid #ddd;
+    padding-right: 20px; /* Space for the icon */
+    text-align: left;
+  }
+
+ /* Buttons */
+ .dialog-actions-view-customer button {
+  background-color:#5e3df1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
